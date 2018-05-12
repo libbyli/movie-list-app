@@ -1,2 +1,2 @@
 # movie-list-app
-Framework movie practice built with React.
+Framework practice built with React.
