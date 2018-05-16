@@ -1,4 +1,4 @@
-const MovieEntry = ({movie}) => (
+const MovieEntry = ({movie, handleSearch}) => (
   <li>
     {movie.title}
   </li>
