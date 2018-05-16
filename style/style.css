@@ -1,8 +1,7 @@
-.btn.search {
-  border: 1px solid grey;
+ul {
+  width: 100%;
 }
 
-.btn.add-movie {
-  background-color: green;
-  color: #FFFFFF;
+li {
+  width: 400px;
 }

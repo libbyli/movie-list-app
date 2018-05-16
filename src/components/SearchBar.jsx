@@ -14,13 +14,15 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className="search-bar">
+      <div className="input-group mb-3">
         <input 
           type="text"
           placeholder="Search..." 
           onChange={(input) => {this.onInputChange(input.target.value);}}
           value={this.state.term} />
-        <button className="btn search" onClick={(e) => {this.props.handleSearch(this.state.query);}}>Go!</button>
+        <div className="input-group-append">
+          <button type="button" className="btn btn-outline-secondary" onClick={(e) => {this.props.handleSearch(this.state.query);}}>Go!</button>
+        </div>
       </div>
     );
   }

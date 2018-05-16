@@ -4,6 +4,9 @@ class App extends React.Component {
 
     this.state = {
       movies: [],
+      view: 'watched',
+      watched: [],
+      toWatch: []
     };
   }
 
@@ -26,12 +29,23 @@ class App extends React.Component {
     }
   }
 
+  // write click handlers for your buttons that change the view to whatever is necessary
+
   render() {
+    // have your buttons 'togggle' state by changing a view property on state
+    // create a variable to hold your selected movies, depending on view
+    // have MovieList render the movies held in the variable instead of in state directly
+    
+    let moviesToRender;
+
     return (
-      <div>
+      <div className="container">
         <h1>Movie List</h1>
         <MovieAdder addMovie={this.addMovie.bind(this)} />
         <SearchBar handleSearch={this.handleSearch.bind(this)} />
+        <button type="button" className="btn btn-outline-secondary btn-lg">Watched</button>
+        <button type="button" className="btn btn-outline-secondary btn-lg">To Watch</button>
+        <br /><br />
         <MovieList movies={this.state.movies} />
       </div>
     );
