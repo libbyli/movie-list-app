@@ -14,14 +14,14 @@ class App extends React.Component {
   }
 
   handleSearch(query) {
-    // look through this.state.movies and find title
-    // set state to be that movie
-    for (let i = 0; i < this.state.movies.length; i+=1) {
-      if (this.state.movies[i].title.toLowerCase().includes(query.toLowerCase())) {
-        this.setState({
-          movies: [this.state.movies[i]],
-        });
-      }
+    if (this.state.movies.filter(movie => { return movie.title.toLowerCase().includes(query.toLowerCase()); }).length === 0) {
+      this.setState({
+        movies: [{title: 'no movie by that name found'}]
+      });
+    } else {
+      this.setState({
+        movies: this.state.movies.filter(movie => { return movie.title.toLowerCase().includes(query.toLowerCase()); })
+      });
     }
   }
 
