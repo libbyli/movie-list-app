@@ -20,7 +20,7 @@ class SearchBar extends React.Component {
           placeholder="Search..." 
           onChange={(input) => {this.onInputChange(input.target.value);}}
           value={this.state.term} />
-        <button className="btn btn-default" onClick={(e) => {this.props.handleSearch(this.state.query);}}>Go!</button>
+        <button className="btn search" onClick={(e) => {this.props.handleSearch(this.state.query);}}>Go!</button>
       </div>
     );
   }

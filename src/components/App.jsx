@@ -3,14 +3,15 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      movies: [
-        {title: 'Mean Girls'},
-        {title: 'Hackers'},
-        {title: 'The Grey'},
-        {title: 'Sunshine'},
-        {title: 'Ex Machina'},
-      ],
+      movies: [],
     };
+  }
+
+  addMovie(input) {
+    this.state.movies.push({title: input});
+    this.setState({
+      movies: this.state.movies
+    });
   }
 
   handleSearch(query) {
@@ -29,6 +30,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>Movie List</h1>
+        <MovieAdder addMovie={this.addMovie.bind(this)} />
         <SearchBar handleSearch={this.handleSearch.bind(this)} />
         <MovieList movies={this.state.movies} />
       </div>
