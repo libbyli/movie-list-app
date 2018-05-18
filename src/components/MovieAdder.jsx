@@ -19,9 +19,15 @@ class MovieAdder extends React.Component {
           type="text"
           placeholder="Add movie title here" 
           onChange={(input) => {this.onInputChange(input.target.value);}}
-          value={this.state.movieInput} />
+          value={this.state.movieInput} 
+        />
         <div className="input-group-append">
-          <button className="btn btn-outline-secondary" onClick={(e) => {this.props.addMovie(this.state.movieInput);}}>Add</button>
+          <button 
+            className="btn btn-outline-secondary"
+            onClick={(e) => {this.props.addMovie(this.state.movieInput);}}
+          >
+            Add
+          </button>
         </div>
       </div>
     );

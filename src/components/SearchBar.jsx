@@ -16,12 +16,19 @@ class SearchBar extends React.Component {
     return (
       <div className="input-group mb-3">
         <input 
-          type="text"
+          type="text" 
           placeholder="Search..." 
-          onChange={(input) => {this.onInputChange(input.target.value);}}
-          value={this.state.term} />
+          onChange={(input) => {this.onInputChange(input.target.value);}} 
+          value={this.state.term} 
+        />
         <div className="input-group-append">
-          <button type="button" className="btn btn-outline-secondary" onClick={(e) => {this.props.handleSearch(this.state.query);}}>Go!</button>
+          <button 
+            type="button" 
+            className="btn btn-outline-secondary" 
+            onClick={(e) => {this.props.handleSearch(this.state.query);}}
+          >
+            Go!
+          </button>
         </div>
       </div>
     );
