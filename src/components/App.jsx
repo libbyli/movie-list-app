@@ -42,9 +42,11 @@ class App extends React.Component {
 
   toggleWatched(target) {
     const index = this.state.toWatch.indexOf(target);
+    this.state.watched.push(target);
+    this.state.toWatch.splice(index, 1);
     this.setState({
-      watched: this.state.watched.push(target),
-      toWatch: this.state.toWatch.splice(index, 1),
+      watched: this.state.watched,
+      toWatch: this.state.toWatch,
     });
   }
 

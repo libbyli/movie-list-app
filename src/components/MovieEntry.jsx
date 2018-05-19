@@ -7,6 +7,5 @@ const MovieEntry = ({movie, toggleWatched}) => (
       onClick={() => toggleWatched(movie)}
     >watched
     </button>
-    {console.log(movie)}
   </li>
 );
