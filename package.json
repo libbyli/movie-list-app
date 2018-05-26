@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "live-server --open=./SpecRunner.html --port=8081",
-    "postinstall": "curl -s https://raw.githubusercontent.com/reactorcore/pomander/master/bin/install | bash"
+    "server": "live-server --port=8081",
+    "postinstall": "babel . --out-dir compiled --presets=env,react --ignore=node_modules,compiled --source-maps inline -w"
   },
   "dependencies": {
     "bootstrap": "^4.1.1",
@@ -19,10 +19,6 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.5.0",
     "chai": "^3.5.0",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.8.2",
     "mocha": "^5.1.1",
     "sinon": "1.17.3"
   },
